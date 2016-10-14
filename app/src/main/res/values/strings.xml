@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
+	<string-array name="word">
+        <item>pie</item>
+        <item>tie</item>
+        <item>lie</item>
+        <item>my</item>
+        <item>rye</item>
+        <item>shy</item>
+        <item>kye</item>
+        <item>ing</item>
+    </string-array>
 </resources>
