@@ -17,6 +17,10 @@ public class results extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results);
 
+        // if we have stored answers here, we can iterate through them and display each one as a block since the results screen
+        // is supposed to display the user's answers I think. Can also iterate through words array to display the word given
+        // if we have a score stored as well we'd probably use that too
+
         Button mainmenu = (Button) findViewById(R.id.button3);
         mainmenu.setOnClickListener(new View.OnClickListener() {
             @Override
