@@ -17,12 +17,28 @@ public class game extends Activity {
         final String[] words = getResources().getStringArray(R.array.word);
         GameText.setText(words[0]);
         final int[] counter = {1};
+
+        //need to add a timer somewhere
+        
         Button submit = (Button) findViewById(R.id.button4);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // maybe check if words array is empty, and if so, then set current word to first word
+                // in new "skip" word array, since we're supposed to let people come back to skipped
+                // words later
                 GameText.setText(words[counter[0]]);
                 counter[0] +=1;
+
+            }
+        });
+
+        Button skip = (Button) findViewById(R.id.button6);
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // currently empty but potentially do the same as submit, but don't record the answer
+                // and instead store the skipped word in a skipped words array to be displayed later
 
             }
         });
