@@ -26,14 +26,15 @@ public class game extends Activity {
         final String[] skipped = new String[5];
         final int[] whatskipped = new int[5];
         final TextView timer = (TextView) findViewById(R.id.textView6) ;
-        new CountDownTimer(30000, 1000) {
+        final Intent intent = new Intent(game.this, MainActivity.class);
+        new CountDownTimer(60000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 timer.setText("seconds remaining: " + millisUntilFinished / 1000);
             }
 
             public void onFinish() {
-                timer.setText("done!");
+               startActivity(intent);
             }
         }.start();
 
@@ -52,17 +53,20 @@ public class game extends Activity {
                     editext.setText("");
                     GameText.setText(words[counter]);
                     counter += 1;
-                    CounterText.setText("Question # " + counter);
+                    CounterText.setText("Question # " + tracker);
                 }else if(skipcounter != 0){
                     answers[tracker-1] = String.valueOf(editext.getText());
-                    tracker-=1;
+                    tracker = whatskipped[what-1];
+                    what-=1;
+                    CounterText.setText("Question # " + tracker);
                     editext.setText("");
                     GameText.setText(skipped[skipcounter-1]);
                     skipcounter-=1;
                 }else{
                     answers[tracker-1] = String.valueOf(editext.getText());
                     counter = 1;
-                    tracker = 1;
+                    tracker = 0;
+                    what = 0;
                     skipcounter = 0;
                     Intent intent = new Intent(v.getContext(),results.class);
                     startActivityForResult(intent,0);
@@ -76,11 +80,13 @@ public class game extends Activity {
             @Override
             public void onClick(View v) {
                 if(counter != 5) {
+                    whatskipped[what] = tracker;
+                    what+=1;
                     skipped[skipcounter] = words[counter-1];
                     tracker+=1;
                     skipcounter +=1;
                     editext.setText("");
-                    CounterText.setText("Question # 1" );
+                    CounterText.setText("Question # " + tracker);
                     GameText.setText(words[counter]);
                     counter += 1;
                 }
@@ -93,7 +99,7 @@ public class game extends Activity {
             public void onClick(View v) {
                 counter = 1;
                 tracker = 1;
-                answers = new String[5];
+                answers = null;
                 skipcounter = 0;
                 Intent intent = new Intent(v.getContext(),MainActivity.class);
                 startActivityForResult(intent,0);
