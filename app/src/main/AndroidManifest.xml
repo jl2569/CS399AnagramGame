@@ -18,6 +18,7 @@
         <activity android:name=".game"></activity>
         <activity android:name=".howto"></activity>
         <activity android:name=".Topic_Selector"></activity>
+        <activity android:name=".results"></activity>
     </application>
 
 </manifest>

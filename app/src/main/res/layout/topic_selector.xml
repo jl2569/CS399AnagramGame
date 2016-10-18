@@ -68,8 +68,7 @@
             android:id="@+id/radioButton3"
             android:layout_alignBaseline="@+id/radioButton"
             android:layout_alignBottom="@+id/radioButton"
-            android:textSize="25dp"
-            android:checked="false" />
+            android:textSize="25dp" />
 
     </RadioGroup>
 

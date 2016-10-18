@@ -1,13 +1,17 @@
 <resources>
     <string name="app_name">My Application</string>
-	<string-array name="word">
-        <item>pie</item>
-        <item>tie</item>
-        <item>lie</item>
-        <item>my</item>
-        <item>rye</item>
-        <item>shy</item>
-        <item>kye</item>
-        <item>ing</item>
+    <string-array name="word">
+        <item>pat</item>
+        <item>thicken</item>
+        <item>bake</item>
+        <item>iced</item>
+        <item>fats</item>
+    </string-array>
+    <string-array name="answers">
+        <item>tap</item>
+        <item>kitchen</item>
+        <item>beak</item>
+        <item>dice</item>
+        <item>fast</item>
     </string-array>
 </resources>
